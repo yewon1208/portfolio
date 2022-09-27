@@ -160,32 +160,31 @@ $(document).ready(function () {
 
 
     //skill - easyPieChart
-    $(window).scroll(function () {
+    $(window).scroll( function(){
 
         /* Check the location of each desired element */
-        $('.chart').each(function (i) {
-
+        $('.chart').each( function(i){
+    
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
-
+    
             /* If the object is completely visible in the window, fade it in */
-            if (bottom_of_window > bottom_of_object) {
+            if( bottom_of_window > bottom_of_object ){
 
                 $('.chart').easyPieChart({
-                    barColor: '#a7a5dc',
-                    trackColor: '#f3f3f3',
+                    barColor: '#a7a5dc',  /*bar color변경하는곳*/
+                    trackColor: '#f3f3f3',/*track color변경하는곳*/
                     scaleColor: '#fff',
                     lineCap: 'round',
                     lineWidth: 10,
                     size: 200,
                     animate: 2000,
-                    onStep: function (from, to, percent) {
-                        $(this.el).find('.percent').text(Math.round(percent));
-                    }
+                    onStep: function(from, to, percent) {
+                        $(this.el).find('.percent').text(Math.round(percent)); }
                 });
-            }
-        });
+             }
+        }); 
     });
-
+    
 
 });
